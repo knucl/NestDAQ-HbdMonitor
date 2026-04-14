@@ -10,7 +10,8 @@ foreach(lvar IN ITEMS HbdMonitor;)
     ${FairLogger_INCDIR};
     ${FairMQ_INCDIR};
     ${CMAKE_SOURCE_DIR};
-    ${CMAKE_CURRENT_SOURCE_DIR}/mydecoder;
+#    ${CMAKE_CURRENT_SOURCE_DIR}/mydecoder;
+    ${CMAKE_SOURCE_DIR}/unpacker
   )
 
   target_link_directories(${EXEC} PUBLIC
@@ -26,7 +27,8 @@ foreach(lvar IN ITEMS HbdMonitor;)
       ${fmt_LIB};
       FairLogger;
       fairmq;
-      mydecoder;
+#      mydecoder;
+      NestdaqUnpacker;
     )
   elseif ((FairMQ_VERSION VERSION_GREATER_EQUAL 1.4.55)
     AND (FairMQ_VERSION VERSION_LESS_EQUAL 1.4.56))
@@ -35,7 +37,8 @@ foreach(lvar IN ITEMS HbdMonitor;)
       ${fmt_LIB};
       FairLogger;
       FairMQ;
-      mydecoder;
+#      mydecoder;
+      NestdaqUnpacker;
     )
   else()
     message(FATAL_ERROR "Unsupported FairMQ version ${FairMQ_VERSION}")

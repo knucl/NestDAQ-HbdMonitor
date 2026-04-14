@@ -123,5 +123,5 @@ message(STATUS "FairLogger_LIBDIR: ${FairLogger_LIBDIR}")
 
 
 #------------------------------------------------------------------------------
-add_subdirectory(mydecoder)
+#add_subdirectory(mydecoder)
 add_subdirectory(hbdmonitor)
